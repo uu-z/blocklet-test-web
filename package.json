@@ -25,7 +25,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:client": "PUBLIC_URL=\"/z8iZvpvLdpfxkvTFdawCF3s5UJdUSkP2NXqPC\" react-scripts build",
+    "bundle": "npm run clean && npm run build:client && abtnode bundle --zip",
+    "deploy": "npm run bundle && abtnode deploy .blocklet/bundle",
+    "clean": "rm -rf .blocklet"
   },
   "husky": {
     "hooks": {
@@ -50,6 +54,7 @@
       "last 1 safari version"
     ]
   },
+  "files":["build"],
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.4.3",
@@ -70,6 +75,9 @@
     "tailwindcss": "^1.4.6"
   },
   "engines": {
-    "node": "10.15.0"
+    "node": "11.15.0"
+  },
+  "volta": {
+    "node": "11.15.0"
   }
 }

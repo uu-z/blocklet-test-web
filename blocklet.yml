@@ -1,0 +1,20 @@
+
+name: react-demo
+description: >-
+  Blocklet from
+  /home/runner/work/blocklet-migrate-ci/blocklet-migrate-ci/workspaces/react-demo
+group: static
+version: 0.1.2
+main: build
+publicUrl: /
+author: ArcBlock
+charging:
+  price: 0
+color: primary
+homepage: .
+capabilities:
+  dynamicPathPrefix: true
+scripts:
+  dev: npm run start
+specVersion: 1.0.0
+did: z8iZvpvLdpfxkvTFdawCF3s5UJdUSkP2NXqPC

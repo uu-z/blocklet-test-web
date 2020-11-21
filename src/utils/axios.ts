@@ -1,5 +1,13 @@
 import Axios from "axios";
 
-export const axios = Axios.create({
-  baseURL: process.env.NODE_ENV === "production" ? "https://blocklet-example-server.herokuapp.com" : "http://localhost:3000",
+Axios.defaults.timeout = 200000;
+
+Axios.interceptors.request.use((config) => {
+  //@ts-ignore
+  const prefix = window.blocklet ? window.blocklet.prefix : window.env.apiPrefix;
+  config.baseURL = prefix || '';
+
+  return config;
 });
+
+export const axios = Axios.create();

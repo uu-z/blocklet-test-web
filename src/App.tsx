@@ -6,7 +6,8 @@ import "antd/dist/antd.css";
 
 const App = () => {
   return useObserver(() => (
-    <Router>
+    //@ts-ignore
+    <Router basename={window.blocklet ? window.blocklet.prefix : window.env.apiPrefix}>
       <Switch>
         <Route path="/" component={HomePage} />
       </Switch>
